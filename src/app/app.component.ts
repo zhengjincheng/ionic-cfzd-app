@@ -34,21 +34,21 @@ export class ConferenceApp {
   // the left menu only works after login
   // the login page disables the left menu
   appPages: PageInterface[] = [
-    { title: 'Main', component: TabsPage, icon: 'xx' },
-    { title: 'Schedule', component: TabsPage, index: 1, icon: 'calendar' },
-    { title: 'Speakers', component: TabsPage, index: 2, icon: 'contacts' },
-    { title: 'Map', component: TabsPage, index: 3, icon: 'map' },
-    { title: 'About', component: TabsPage, index: 4, icon: 'information-circle' }
+    { title: '首页', component: TabsPage, icon: 'xx' },
+	{ title: '分类', component: TabsPage, index: 1, icon: 'map' },
+    { title: '发布', component: TabsPage, index: 2, icon: 'contacts' },
+    { title: '消息', component: TabsPage, index: 3, icon: 'calendar' },
+    { title: '我的', component: TabsPage, index: 4, icon: 'information-circle' }
   ];
   loggedInPages: PageInterface[] = [
-    { title: 'Account', component: AccountPage, icon: 'person' },
-    { title: 'Support', component: SupportPage, icon: 'help' },
-    { title: 'Logout', component: TabsPage, icon: 'log-out', logsOut: true }
+    { title: '账户', component: AccountPage, icon: 'person' },
+    { title: '帮助', component: SupportPage, icon: 'help' },
+    { title: '登出', component: TabsPage, icon: 'log-out', logsOut: true }
   ];
   loggedOutPages: PageInterface[] = [
-    { title: 'Login', component: LoginPage, icon: 'log-in' },
-    { title: 'Support', component: SupportPage, icon: 'help' },
-    { title: 'Signup', component: SignupPage, icon: 'person-add' }
+    { title: '登陆', component: LoginPage, icon: 'log-in' },
+    { title: '帮助', component: SupportPage, icon: 'help' },
+    { title: '注册', component: SignupPage, icon: 'person-add' }
   ];
   rootPage: any;
 

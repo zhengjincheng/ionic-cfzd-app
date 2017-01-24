@@ -3,16 +3,16 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-	 <ion-toolbar >
 		<ion-searchbar color="primary"
 					   [(ngModel)]="queryText"
 					   (ionInput)="updateSchedule()"
 					   placeholder="Search">
 		</ion-searchbar>
-	  </ion-toolbar>
    </ion-navbar>
-   <ion-navbar>
-	 <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
+</ion-header>
+
+<ion-content>
+	 <ion-segment>
 		  <ion-segment-button value="all">
 			精品
 		  </ion-segment-button>
@@ -20,72 +20,86 @@
 			拍场
 		  </ion-segment-button>
 	  </ion-segment>
-  </ion-navbar>
-
- 
-</ion-header>
-
-<ion-content>
 	<ion-slides >
-	  <ion-slide style="background-color: green">
-		<h2>Slide 1</h2>
+	  <ion-slide >
+		  <img src="/assets/img/slide1.JPG"/>
 	  </ion-slide>
-	  <ion-slide style="background-color: blue">
-		<h2>Slide 2</h2>
+	  <ion-slide >
+		  <img src="/assets/img/slide2.JPG"/>
 	  </ion-slide>
-	  <ion-slide style="background-color: red">
-		<h2>Slide 3</h2>
+	  <ion-slide >
+		  <img src="/assets/img/slide3.JPG"/>
 	  </ion-slide>
 	</ion-slides>
-  <ion-list #scheduleList [hidden]="shownSessions === 0">
-
-    <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
-
-      <ion-item-divider sticky>
-        <ion-label>
-          {{group.time}}
-        </ion-label>
-      </ion-item-divider>
-
-      <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="session.tracks[0] | lowercase" [hidden]="session.hide">
-
-        <button ion-item (click)="goToSessionDetail(session)">
-          <h3>{{session.name}}</h3>
-          <p>
-            {{session.timeStart}} &mdash;
-            {{session.timeEnd}}:
-            {{session.location}}
-          </p>
-        </button>
-
-        <ion-item-options>
-          <button ion-button color="favorite" (click)="addFavorite(slidingItem, session)" *ngIf="segment === 'all'">
-            Favorite
-          </button>
-          <button ion-button color="danger" (click)="removeFavorite(slidingItem, session, 'Remove Favorite')" *ngIf="segment === 'favorites'">
-            Remove
-          </button>
-        </ion-item-options>
-
-      </ion-item-sliding>
-
-    </ion-item-group>
-
+  <ion-list >
+  <ion-row>
+    <ion-col class="middle">
+			<button ion-button icon-only middle> 
+				<ion-icon name="home"></ion-icon>
+			</button>
+	</ion-col>
+    <ion-col class="middle">
+			<button ion-button icon-only middle>
+				<ion-icon name="home"></ion-icon>
+			</button>
+			</ion-col>
+    <ion-col class="middle">
+			<button ion-button icon-only middle>
+				<ion-icon name="home"></ion-icon>
+			</button>
+			</ion-col>
+  </ion-row>
+		<ion-card class="card-md">
+		  <img src="/assets/img/list1.png"/>
+		  <ion-card-content>
+			  最美中国年茶器专场
+		  </ion-card-content>
+			 <ion-row>
+				<ion-col>
+				  <button ion-button icon-left clear small>
+					<ion-icon name="thumbs-up"></ion-icon>
+					<div>12 喜欢</div>
+				  </button>
+				</ion-col>
+				<ion-col>
+				  <button ion-button icon-left clear small>
+					<ion-icon name="text"></ion-icon>
+					<div>4 评论</div>
+				  </button>
+				</ion-col>
+				<ion-col center text-center>
+				  <ion-note>
+					11h ago
+				  </ion-note>
+				</ion-col>
+			</ion-row>
+		</ion-card>
+		<ion-card class="card-md">
+		  <img src="/assets/img/list1.png"/>
+		  <ion-card-content>
+			  最美中国年茶器专场
+		  </ion-card-content>
+			 <ion-row>
+				<ion-col>
+				  <button ion-button icon-left clear small>
+					<ion-icon name="thumbs-up"></ion-icon>
+					<div>12 喜欢</div>
+				  </button>
+				</ion-col>
+				<ion-col>
+				  <button ion-button icon-left clear small>
+					<ion-icon name="text"></ion-icon>
+					<div>4 评论</div>
+				  </button>
+				</ion-col>
+				<ion-col center text-center>
+				  <ion-note>
+					11h ago
+				  </ion-note>
+				</ion-col>
+			</ion-row>
+		</ion-card>
   </ion-list>
 
-  <ion-list-header [hidden]="shownSessions > 0">
-      No Sessions Found
-  </ion-list-header>
-
-  <ion-fab bottom right #fab>
-    <button ion-fab><ion-icon name="share"></ion-icon></button>
-    <ion-fab-list side="top">
-      <button ion-fab color="vimeo" (click)="openSocial('Vimeo', fab)"><ion-icon name="logo-vimeo"></ion-icon></button>
-      <button ion-fab color="google" (click)="openSocial('Google+', fab)"><ion-icon name="logo-googleplus"></ion-icon></button>
-      <button ion-fab color="twitter" (click)="openSocial('Twitter', fab)"><ion-icon name="logo-twitter"></ion-icon></button>
-      <button ion-fab color="facebook" (click)="openSocial('Facebook', fab)"><ion-icon name="logo-facebook"></ion-icon></button>
-    </ion-fab-list>
-  </ion-fab>
-
-
+  <button ion-button full>点击加载更多</button>
 </ion-content>

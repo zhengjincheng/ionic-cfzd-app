@@ -3,49 +3,166 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>About</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="presentPopover($event)">
-        <ion-icon name="more"></ion-icon>
-      </button>
-    </ion-buttons>
+    <ion-title>个人中心</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <div class="about-header">
-    <img src="assets/img/ionic-logo-white.svg" alt="ionic logo">
-  </div>
-  <div padding class="about-info">
-    <h4>Ionic Conference</h4>
+<ion-content class="schedule-page">
+<ion-card>
+  <ion-item>
+    <ion-avatar item-left class="img">
+      <img src="/assets/img/speakers/lion.jpg" >
+    </ion-avatar>
+    <h2>龙云凤</h2>
+    <span>粉丝12 </span> <span>关注12 </span>
+	<button ion-button item-right> 
+				<ion-icon name="refresh-circle"></ion-icon>
+	</button>
+  </ion-item>
+  <ion-item>
+    <p>买家等级：<ion-icon name="rose" style="display:inline"></ion-icon ></p>
+    <p>违约比率：0%（0/0）</p>
+    <p>退货比率：0%（0/0）</p>
+    <p>卖家等级：<ion-icon name="rose" style="display:inline"></ion-icon ></p>
+  </ion-item>
+</ion-card>
+<ion-card>
 
-    <ion-list no-lines>
-      <ion-item>
-        <ion-icon name="calendar" item-left></ion-icon>
-        <ion-label>Date</ion-label>
-        <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="conferenceDate"></ion-datetime>
-      </ion-item>
+    <ion-item>
+    <ion-avatar item-left>
+      <img src="/assets/img/qd.PNG">
+    </ion-avatar>
+    <h2>已连续签到0天</h2>
+    <p>今日可获得1点积分</p>
+	<button ion-button item-right>签到	</button>
 
-      <ion-item>
-        <ion-icon name="pin" item-left></ion-icon>
-        <ion-label>Location</ion-label>
-        <ion-select>
-          <ion-option value="madison" selected>Madison, WI</ion-option>
-          <ion-option value="austin">Austin, TX</ion-option>
-          <ion-option value="chicago">Chicago, IL</ion-option>
-          <ion-option value="seattle">Seattle, WA</ion-option>
-        </ion-select>
-      </ion-item>
-    </ion-list>
+  </ion-item>
+  </ion-card>
+<ion-card>
+   <button ion-item  icon-left >
+	<ion-icon name="home"></ion-icon>
+    我的买入
+  </button>
+  <ion-row>
+    <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="pay"></ion-icon>
+				<p>待付款</p>
+			</button>
+	</ion-col>
+     <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="shipments"></ion-icon>
+				<p>未发货</p>
+			</button>
+	</ion-col>
+     <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="waitforreceiving"></ion-icon>
+				<p>待收货</p>
+			</button>
+	</ion-col>
+	 <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="reimburse"></ion-icon>
+				<p>退款</p>
+			</button>
+	</ion-col>
+  </ion-row>
+</ion-card>
 
-    <p>
-      The Ionic Conference is a one-day conference featuring talks from the
-      Ionic team. It is focused on Ionic applications being built with
-      Ionic 2. This includes migrating apps from Ionic 1 to Ionic 2,
-      Angular concepts, Webpack, Sass, and many other technologies used
-      in Ionic 2. Tickets are completely sold out, and we’re expecting
-      more than 1000 developers – making this the largest Ionic
-      conference ever!
-    </p>
-  </div>
+<ion-card>
+   <button ion-item  icon-left >
+	<ion-icon name="home"></ion-icon>
+    参与出价
+  </button>
+</ion-card>
+<ion-card>
+   <button ion-item  icon-left >
+	<ion-icon name="home"></ion-icon>
+    众筹管理
+  </button>
+</ion-card>
+<ion-card>
+   <button ion-item  icon-left >
+	<ion-icon name="home"></ion-icon>
+    我的卖出
+  </button>
+  <ion-row>
+    <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="pay"></ion-icon>
+				<p>待付款</p>
+			</button>
+	</ion-col>
+     <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="shipments"></ion-icon>
+				<p>待发货</p>
+			</button>
+	</ion-col>
+     <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="home"></ion-icon>
+				<p>已发货</p>
+			</button>
+	</ion-col>
+	 <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="reimburse"></ion-icon>
+				<p>退款</p>
+			</button>
+	</ion-col>
+  </ion-row>
+</ion-card>
+ <ion-card>
+   <ion-row>
+   <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="home"></ion-icon>
+				<p>我的拍品</p>
+			</button>
+	</ion-col>
+     <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="home"></ion-icon>
+				<p>我的拍场</p>
+			</button>
+	</ion-col>
+     <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="home"></ion-icon>
+				<p>申请加V</p>
+			</button>
+	</ion-col>
+	 <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="wallet"></ion-icon>
+				<p>我的钱包</p>
+			</button>
+	</ion-col>
+   </ion-row>
+<ion-row>
+   <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="home"></ion-icon>
+				<p>我的积分</p>
+			</button>
+	</ion-col>
+     <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="home"></ion-icon>
+				<p>营销工具</p>
+			</button>
+	</ion-col>
+     <ion-col class="middle">
+			<button ion-button  icon-top clear> 
+				<ion-icon name="home"></ion-icon>
+				<p>个人</p>
+			</button>
+	</ion-col>
+	 <ion-col class="middle">
+	</ion-col>
+   </ion-row>
+</ion-card>
 </ion-content>

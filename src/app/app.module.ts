@@ -46,7 +46,7 @@ import { UserData } from '../providers/user-data';
     SupportPage
   ],
   imports: [
-    IonicModule.forRoot(ConferenceApp)
+    IonicModule.forRoot(ConferenceApp,{backButtonText: '返回'}, {})
   ],
   bootstrap: [IonicApp],
   entryComponents: [

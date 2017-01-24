@@ -1,21 +1,54 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Session</ion-title>
+    <ion-title>拍卖</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h1>{{session.name}}</h1>
+<ion-content >
+  <ion-list>
+    <ion-row>
+	<ion-col >
+  <ion-card class="card-md">
+		  <img src="/assets/img/fenlei2.JPG"/>
+		  <ion-card-content>
+			  最美中国年茶器专场
+		  </ion-card-content>
+		  <ion-row>
+				<ion-col >
+				 <ion-note class="text-md-danger">
+					¥1000
+				  </ion-note>
+				</ion-col>
+				<ion-col  text-right>
+				  <ion-note>
+					11h ago
+				  </ion-note>
+				</ion-col>
+			</ion-row>
+		</ion-card>
+		</ion-col>
+	<ion-col >
+		<ion-card class="card-md">
+		  <img src="/assets/img/fenlei2.JPG"/>
+		  <ion-card-content>
+			  最美中国年茶器专场
+		  </ion-card-content>
+		  <ion-row>
+				<ion-col >
+				 <ion-note class="text-md-danger">
+					¥1000
+				  </ion-note>
+				</ion-col>
+				<ion-col  text-right>
+				  <ion-note>
+					11h ago
+				  </ion-note>
+				</ion-col>
+			</ion-row>
+		</ion-card>
+	</ion-col>
 
-  <h4 *ngFor="let speaker of session.speakers">
-    {{speaker.name}}
-  </h4>
+   </ion-row>
 
-  <p>
-    {{session.timeStart}} - {{session.timeEnd}}
-  </p>
-
-  <p>{{session.location}}</p>
-
-  <p>{{session.description}}</p>
+  </ion-list>
 </ion-content>

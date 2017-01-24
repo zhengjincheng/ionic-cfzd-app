@@ -3,10 +3,55 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Map</ion-title>
+    <ion-title>分类</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="map-page">
-  <div style="height: 100%; width: 100%" #mapCanvas id="map_canvas"></div>
+<ion-list>
+  <ion-list-header>
+    书画
+  </ion-list-header>
+   <ion-item >
+	<ion-row>
+	  <ion-col> 
+	  <ion-card (click)="goToSessionDetail(1)">
+		<img src="/assets/img/fenlei1.JPG"/>
+		<div class="card-title">书法</div>
+	  </ion-card>
+	  </ion-col>
+	  <ion-col> <ion-card>
+		<img src="/assets/img/fenlei1.JPG"/>
+		<div class="card-title">国画</div>
+	  </ion-card>
+	  </ion-col>
+	  <ion-col>
+	  </ion-col>
+	</ion-row>
+  </ion-item>
+  <ion-list-header>
+    当代
+  </ion-list-header>
+   <ion-item>
+	<ion-row>
+	  <ion-col> 
+	  <ion-card>
+		<img src="/assets/img/fenlei1.JPG"/>
+		<div class="card-title">油画</div>
+	  </ion-card>
+	  </ion-col>
+	  <ion-col> <ion-card>
+		<img src="/assets/img/fenlei1.JPG"/>
+		<div class="card-title">雕塑</div>
+	  </ion-card>
+	  </ion-col>
+	  <ion-col> <ion-card>
+		<img src="/assets/img/fenlei1.JPG"/>
+		<div class="card-title">版画</div>
+	  </ion-card>
+	  </ion-col>
+	</ion-row>
+  </ion-item>
+  
+</ion-list>
 </ion-content>

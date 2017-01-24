@@ -15,14 +15,33 @@ $categories: (
   @return map-remove($categories);
 }
 
-page-schedule {
-  @each $track, $value in auxiliary-categories() {
-   ion-item-sliding[track=#{$track}] ion-label {
-     border-left: 2px solid $value;
-     padding-left: 10px;
-   }
-  }
-}
-ion-slides{
-height:inherit;
+page-main {
+	ion-slides{
+		height:inherit;
+	}
+	.card-md{
+		margin:auto;
+		width:100%;
+		box-shadow:none;
+	}
+	ion-col{
+		padding:0px;
+	}
+	.middle{
+		text-align:center;
+	}
+	
+	.segment-ios .segment-button:first-of-type{
+		border-radius:initial;
+	}
+	.segment-ios .segment-button:last-of-type{
+		border-radius:initial;
+	}
+	.segment-ios .segment-button{
+		border-color:#FFF;
+	}
+	.card-content-ios{
+		font-size:1.3rem;
+		padding:3px 16px 3px 16px;
+	}
 }

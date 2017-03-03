@@ -27,19 +27,20 @@
 
 
 
-.ion-ios-pay:before {
+
+.ion-md-pay:before,.ion-ios-pay:before {
   content: "\e900";
 }
-.ion-ios-waitforreceiving:before {
+.ion-md-waitforreceiving:before,.ion-ios-waitforreceiving:before {
   content: "\e901";
 }
-.ion-ios-wallet:before {
+.ion-md-wallet:before,.ion-ios-wallet:before {
   content: "\e902";
 }
-.ion-ios-shipments:before {
+.ion-md-shipments:before,.ion-ios-shipments:before {
   content: "\e903";
 }
-.ion-ios-reimburse:before {
+.ion-md-reimburse:before,.ion-ios-reimburse:before {
   content: "\e904";
 }
 

@@ -8,50 +8,21 @@
 </ion-header>
 
 <ion-content class="map-page">
-<ion-list>
+<ion-list *ngFor="let category of categorys">
   <ion-list-header>
-    书画
+    {{category.name}}
   </ion-list-header>
    <ion-item >
-	<ion-row>
-	  <ion-col> 
-	  <ion-card (click)="goToSessionDetail(1)">
-		<img src="/assets/img/fenlei1.JPG"/>
-		<div class="card-title">书法</div>
-	  </ion-card>
-	  </ion-col>
-	  <ion-col> <ion-card>
-		<img src="/assets/img/fenlei1.JPG"/>
-		<div class="card-title">国画</div>
-	  </ion-card>
-	  </ion-col>
-	  <ion-col>
+	<ion-row *ngFor="let row of category.grid">
+	
+	  <ion-col *ngFor="let item of row;" > 
+		  <ion-card  *ngIf="item">
+			<img src="{{item.icon}}"/>
+			<div class="card-title">{{item.name}}</div>
+		  </ion-card>
 	  </ion-col>
 	</ion-row>
   </ion-item>
-  <ion-list-header>
-    当代
-  </ion-list-header>
-   <ion-item>
-	<ion-row>
-	  <ion-col> 
-	  <ion-card>
-		<img src="/assets/img/fenlei1.JPG"/>
-		<div class="card-title">油画</div>
-	  </ion-card>
-	  </ion-col>
-	  <ion-col> <ion-card>
-		<img src="/assets/img/fenlei1.JPG"/>
-		<div class="card-title">雕塑</div>
-	  </ion-card>
-	  </ion-col>
-	  <ion-col> <ion-card>
-		<img src="/assets/img/fenlei1.JPG"/>
-		<div class="card-title">版画</div>
-	  </ion-card>
-	  </ion-col>
-	</ion-row>
-  </ion-item>
-  
+ 
 </ion-list>
 </ion-content>

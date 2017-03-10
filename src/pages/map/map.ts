@@ -3,7 +3,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { ConferenceData } from '../../providers/conference-data';
 import { Platform, NavController } from 'ionic-angular';
 import { SessionDetailPage } from '../session-detail/session-detail';
-import { Hero } from '../../providers/Hero';
+import { Category } from '../../providers/Category';
 import {  Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
@@ -18,7 +18,7 @@ export class MapPage {
 
   @ViewChild('mapCanvas') mapElement: ElementRef;
   private heroesUrl = '/api/category';
-  public categorys: Hero[];
+  public categorys: Category[];
   constructor(private http: Http,public navCtrl: NavController,public confData: ConferenceData, public platform: Platform) {
 	   // this.http.get(this.heroesUrl).subscribe(res=> this.categorys =res.json());
   }
@@ -27,7 +27,7 @@ export class MapPage {
 		this.getHeroes();
 
   }
-  getHeroes(): Promise<Hero[]> {
+  getHeroes(): Promise<Category[]> {
     return this.http.get(this.heroesUrl)
                .toPromise()
                .then((rsp) => {

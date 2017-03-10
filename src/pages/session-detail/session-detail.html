@@ -5,50 +5,43 @@
 </ion-header>
 
 <ion-content >
+	<ion-segment style="padding-top:3px" >
+    <ion-segment-button value="startPrice" (click)="orderBy('startPrice')" >
+      <span>价格</span> <ion-icon name="{{startPriceicon}}"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="endtime" (click)="orderBy('endtime')">
+      时间<ion-icon name="{{endtimeicon}}"></ion-icon>
+    </ion-segment-button>
+	 <ion-segment-button value="hits" (click)="orderBy('hits')">
+      热度<ion-icon name="{{hitsicon}}"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
   <ion-list>
-    <ion-row>
-	<ion-col >
-  <ion-card class="card-md">
-		  <img src="/assets/img/fenlei2.JPG"/>
+  
+  
+    <ion-row *ngFor="let row of grid">
+	<ion-col *ngFor="let item of row;" >
+	<ion-card class="card-md" *ngIf="item">
+		  <img src="{{item.mainImage}}"/>
 		  <ion-card-content>
-			  最美中国年茶器专场
+			  {{item.name}}
 		  </ion-card-content>
 		  <ion-row>
 				<ion-col >
 				 <ion-note class="text-md-danger">
-					¥1000
+					¥{{item.startPrice}}
 				  </ion-note>
 				</ion-col>
 				<ion-col  text-right>
 				  <ion-note>
-					11h ago
+					{{item.endtime}}
 				  </ion-note>
 				</ion-col>
 			</ion-row>
 		</ion-card>
 		</ion-col>
-	<ion-col >
-		<ion-card class="card-md">
-		  <img src="/assets/img/fenlei2.JPG"/>
-		  <ion-card-content>
-			  最美中国年茶器专场
-		  </ion-card-content>
-		  <ion-row>
-				<ion-col >
-				 <ion-note class="text-md-danger">
-					¥1000
-				  </ion-note>
-				</ion-col>
-				<ion-col  text-right>
-				  <ion-note>
-					11h ago
-				  </ion-note>
-				</ion-col>
-			</ion-row>
-		</ion-card>
-	</ion-col>
-
-   </ion-row>
+	  </ion-row>
 
   </ion-list>
+    <button ion-button full (click)="getHeroes()" >点击加载更多</button>
 </ion-content>

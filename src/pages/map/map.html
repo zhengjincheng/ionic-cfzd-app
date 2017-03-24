@@ -15,7 +15,7 @@
    <ion-item >
 	<ion-row *ngFor="let row of category.grid">
 	  <ion-col *ngFor="let item of row;" > 
-		  <ion-card  *ngIf="item" (click)="goToSessionDetail(items)" >
+		  <ion-card  *ngIf="item" (click)="goToSessionDetail(item.id)" >
 			<img src="{{item.icon}}"/>
 			<div class="card-title">{{item.name}}</div>
 		  </ion-card>

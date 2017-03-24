@@ -10,7 +10,6 @@ import 'rxjs/add/operator/toPromise';
   templateUrl: 'session-detail.html'
 })
 export class SessionDetailPage {
-  session: any;
   private heroesUrl = '/api/auction';
   public auctions: Auction[];
   public grid: Auction[][];
@@ -24,9 +23,9 @@ export class SessionDetailPage {
   private DESC_ICON:string="arrow-down";
   private ASC_ICON:string="arrow-up";
   private pagesize:number=10;
+  private categoryId:number;
 
-  constructor(public navParams: NavParams,private http: Http) {
-    this.session = navParams.data;
+  constructor(public navParams: NavParams,public http: Http) {
 	this.pageIndex=0;
 	this.auctions=[];
 	this.field="startPrice";
@@ -34,11 +33,12 @@ export class SessionDetailPage {
 	this.startPriceicon=this.DESC_ICON;
 	this.endtimeicon=this.DESC_ICON;
 	this.hitsicon=this.DESC_ICON;
+	this.categoryId=navParams.get('categoryId');
 
 	this.getHeroes();
   }
   getHeroes(): Promise<Auction[]> {
-    return this.http.get(this.heroesUrl+"?page="+this.pageIndex+"&size="+this.pagesize+"&direction="+this.direction+"&field="+this.field)
+    return this.http.get(this.heroesUrl+"?page="+this.pageIndex+"&size="+this.pagesize+"&direction="+this.direction+"&field="+this.field+"&categoryId="+this.categoryId)
                .toPromise()
                .then((rsp) => {
 					this.auctions=this.auctions.concat(rsp.json());

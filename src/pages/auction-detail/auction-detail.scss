@@ -1,0 +1,98 @@
+page-auction-detail {
+$imgsize:        40px;
+$img-offset:     -20px;
+
+	ion-slides{
+		height:inherit;
+	}
+	.box{
+		display:-webkit-flex;
+		display:flex;
+		margin:0;
+		padding:0px 20px;
+		border-radius:5px;
+		list-style:none;
+	}
+	#box1{
+		-webkit-justify-content:space-between;
+		justify-content:space-between;
+		padding:20px;
+	}
+	.box img{
+		border-radius:50%;
+		width:100px;
+		height:100px;
+	}
+	/*	-webkit-justify-content:center;
+		justify-content:center;
+		-webkit-align-items:center;
+		align-items:center;
+	*/	
+	#box2{
+		position:relative;
+		margin:auto;
+		width:150px;
+		text-align:center;
+	}
+	#box2 img{
+		width:$imgsize;
+		height:$imgsize;
+		border-radius:50%;
+	}
+	#box2 button{
+		width:$imgsize;
+		height:$imgsize;
+		pading:0px;
+		margin:0px;
+	}
+	#box2 button:first-child{
+		left:$img-offset;
+		position:absolute;
+	}
+	#box2 button:last-child{
+		right:$img-offset;
+		top:0px;
+		position:absolute;
+	}
+	#box2 div{
+		background-color:lighten(color($colors, light),0%);
+	}
+	.center {
+		text-align:center
+	}
+	#text{
+		height:$imgsize;
+		line-height:$imgsize;  
+	}
+	.updown {
+		position:relative;
+		width:40px;
+		height:60px;
+		text-align:center
+
+	}
+	.updown img{
+		position:absolute;
+		width:40px;
+		height:40px;
+		left:0px;
+	}
+	.updown p{
+		bottom:0px;
+		position:absolute;
+		margin:  0 auto;
+		width:100%;
+
+	}
+	.card{
+		margin-bottom:0px;
+		box-shadow:none;
+		border-color:  red;
+		border-top:0px;
+		border-left:0px;
+		border-right:0px;
+		border-bottom:1px;
+		border-style:inset;
+
+	}
+}

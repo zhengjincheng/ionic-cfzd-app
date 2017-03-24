@@ -13,6 +13,7 @@ import { SupportPage } from '../pages/support/support';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
+import { IonDigitKeyboard, IonDigitKeyboardOptions } from '../components/ion-digit-keyboard/ion-digit-keyboard';
 
 export interface PageInterface {
   title: string;
@@ -26,6 +27,24 @@ export interface PageInterface {
   templateUrl: 'app.template.html'
 })
 export class ConferenceApp {
+	keyboardSettings: IonDigitKeyboardOptions = {
+	        align: 'center',
+	        width: '',
+	        visible: false,
+	        leftActionOptions: {
+	            iconName: 'ios-backspace-outline',
+	            fontSize: '1.4em'
+	        },
+	        rightActionOptions: {
+	            iconName: 'ios-checkmark-circle-outline',
+	            fontSize: '1.3em'
+	        },
+	        roundButtons: false,
+	        showLetters: false,
+	        swipeToHide: true,
+	        // Available themes: IonDigitKeyboard.themes
+	        theme: 'light'
+	    };
   // the root nav is a child of the root app component
   // @ViewChild(Nav) gets a reference to the app's root nav
   @ViewChild(Nav) nav: Nav;
@@ -128,5 +147,13 @@ export class ConferenceApp {
     this.platform.ready().then(() => {
       Splashscreen.hide();
     });
+  }
+  // Event way
+  numberClick(key: number) {
+      console.log('From event: ', key);
+  }
+
+  hideKeyboard() {
+      IonDigitKeyboard.hide();
   }
 }

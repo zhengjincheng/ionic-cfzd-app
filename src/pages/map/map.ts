@@ -61,9 +61,9 @@ export class MapPage {
     return Promise.reject(error.message || error);
   }
   
-  goToSessionDetail(sessionData) {
+  goToSessionDetail(categoryId) {
     // go to the session detail page
     // and pass in the session data
-    this.navCtrl.push(SessionDetailPage, sessionData);
+    this.navCtrl.push(SessionDetailPage, { categoryId:categoryId} );
   }
 }

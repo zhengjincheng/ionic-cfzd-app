@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+ 
+    <ion-segment [(ngModel)]="selected">
+      <ion-segment-button value="{{item.id}}" *ngFor="let item of categorys"  (click)="click(item.id)">
+        {{item.name}}
+      </ion-segment-button>
+     </ion-segment>
+	
+
+  </ion-navbar>
+ 
+</ion-header>
+
+<ion-content (swipe)="swipeEvent($event)">
+
+ <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="下拉刷新"
+        refreshingSpinner="circles"
+        refreshingText="正在刷新...">
+      </ion-refresher-content>
+    </ion-refresher>
+ 
+	 <ion-list>
+     <ion-row *ngFor="let row of grid">
+	<ion-col *ngFor="let item of row;" >
+	<ion-card class="card-md" *ngIf="item">
+		  <img src="{{item.mainImage}}"/>
+		  <ion-card-content>
+			  {{item.name}}
+		  </ion-card-content>
+		  <ion-row>
+				<ion-col >
+				 <ion-note class="text-md-danger">
+					¥{{item.startPrice}}
+				  </ion-note>
+				</ion-col>
+				<ion-col  text-right>
+				  <ion-note>
+					{{item.endtime}}
+				  </ion-note>
+				</ion-col>
+			</ion-row>
+		</ion-card>
+		</ion-col>
+	  </ion-row>
+
+  </ion-list>
+   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="circles"
+      loadingText="正在加载更多...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+    
+</ion-content>

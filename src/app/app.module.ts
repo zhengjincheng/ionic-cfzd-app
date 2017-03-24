@@ -24,6 +24,12 @@ import { SupportPage } from '../pages/support/support';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
+import { CreateAuctionPage } from '../pages/create-auction/create-auction';
+import { CreateAuction2Page } from '../pages/create-auction2/create-auction2';
+import { AuctionListPage } from '../pages/auction-list/auction-list';
+import { AuctionDetailPage } from '../pages/auction-detail/auction-detail';
+import { IonDigitKeyboard } from '../components/ion-digit-keyboard/ion-digit-keyboard';
+
 
 
 @NgModule({
@@ -43,7 +49,12 @@ import { UserData } from '../providers/user-data';
     SpeakerListPage,
     TabsPage,
     TutorialPage,
-    SupportPage
+    SupportPage,
+	CreateAuctionPage,
+	CreateAuction2Page,
+	AuctionListPage,
+	AuctionDetailPage,
+	IonDigitKeyboard
   ],
   imports: [
     IonicModule.forRoot(ConferenceApp,{backButtonText: '返回'}, {})
@@ -65,7 +76,12 @@ import { UserData } from '../providers/user-data';
     SpeakerListPage,
     TabsPage,
     TutorialPage,
-    SupportPage
+    SupportPage,
+	CreateAuctionPage,
+	CreateAuction2Page,
+	AuctionListPage,
+	AuctionDetailPage
+	
   ],
   providers: [ConferenceData, UserData, Storage]
 })

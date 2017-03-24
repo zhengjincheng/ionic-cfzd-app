@@ -1,0 +1,63 @@
+<!--
+  Generated template for the CreateAuction2 page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>拍品发布</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<form >
+      <ion-item>
+        <ion-label>截止时间</ion-label>
+		<ion-datetime  [(ngModel)]="endtime"   [ngModelOptions]="{standalone: true}" type="datetime-local" displayFormat="YYYY-MM-DD HH:mm" pickerFormat="YYYY-MM-DD HH:mm" monthNames="一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一,十二月" ></ion-datetime>
+      </ion-item>
+	   <ion-item>
+		<ion-label>分类</ion-label>
+		<ion-select [(ngModel)]="selected" [ngModelOptions]="{standalone: true}" interface="action-sheet" cancelText="取消" okText="确定">
+		  <ion-option *ngFor="let item of categorys" value="{{item.id}}">{{item.name}}</ion-option>
+		</ion-select>
+	  </ion-item>
+	  <ion-item>
+        <ion-label>描述</ion-label>
+        <ion-input type="text"   [(ngModel)]="description" [ngModelOptions]="{standalone: true}" ></ion-input>
+      </ion-item>
+	  <ion-item>
+        <ion-label>名称</ion-label>
+        <ion-input type="text"   [(ngModel)]="name"  [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+	   <ion-item>
+        <ion-label>起拍价</ion-label>
+        <ion-input type="tel"   [(ngModel)]="startPrice" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+	  <ion-item>
+        <ion-label>加价幅度</ion-label>
+        <ion-input type="tel"  [(ngModel)]="addrange" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+	   <ion-item>
+        <ion-label>保证金</ion-label>
+        <ion-input type="tel"   [(ngModel)]="deposit" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+	   <ion-item>
+        <ion-label>一口价</ion-label>
+        <ion-input type="tel"   [(ngModel)]="fixedPrice" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+	   <ion-item>
+        <ion-label>包邮</ion-label>
+		<ion-toggle [(ngModel)]="freeship" [ngModelOptions]="{standalone: true}" ></ion-toggle>
+      </ion-item>
+	  <ion-item>
+        <ion-label>七天无理由退换</ion-label>
+		 <ion-toggle [(ngModel)]="returnable" [ngModelOptions]="{standalone: true}" ></ion-toggle>
+      </ion-item>
+    
+      <button ion-button  (click)="publish()" >发布拍品</button>
+    </form>
+</ion-content>

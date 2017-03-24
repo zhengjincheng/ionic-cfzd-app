@@ -91,3 +91,25 @@
 
 <!-- main navigation -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-digit-keyboard
+    [align]="keyboardSettings.align"
+    [width]="keyboardSettings.width"
+    [visible]="keyboardSettings.visible"
+    [leftActionOptions]="keyboardSettings.leftActionOptions"
+    [rightActionOptions]="keyboardSettings.rightActionOptions"
+    [roundButtons]="keyboardSettings.roundButtons"
+    [showLetters]="keyboardSettings.showLetters"
+    [swipeToHide]="keyboardSettings.swipeToHide"
+    [theme]="keyboardSettings.theme"
+    (numberClick)="numberClick($event)"
+>
+    <ion-toolbar no-border-bottom>
+        <ion-buttons start>
+            <button ion-button (click)="hideKeyboard()">取消</button>
+        </ion-buttons>
+        <ion-buttons end>
+            <button ion-button solid *ngIf="">Next</button>
+            <button ion-button (click)="hideKeyboard()">确定</button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-digit-keyboard>
